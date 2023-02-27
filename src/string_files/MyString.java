@@ -36,4 +36,26 @@ public class MyString {
 		//update the length
 		curr_len = str.curr_len;
 	} 
+	
+	public int getLength() {return curr_len;}
+	
+	private void ensureCapacity() {
+		
+		//if arr is null, make a new array
+		if(arr == null) {
+			arr = new char[5];
+		}
+		//else if arr is full, make a larger array
+		else if(arr.length == curr_len){
+			char [] newArr = new char[arr.length * 2];
+			//copy chars from arr to newArr
+			int i = 0;
+			for(Character c : arr) {
+				newArr[i++] = c;
+			}
+			//update arr
+			arr = newArr;
+			System.out.println(arr.length);
+		}
+	}
 }
