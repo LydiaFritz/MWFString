@@ -59,6 +59,10 @@ public class MyString {
 		}
 	}
 	
+	public char get(int index) {
+		return arr[index];		
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
