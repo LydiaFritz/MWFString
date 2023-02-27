@@ -15,7 +15,7 @@ public class Driver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MyString str = new MyString("chuckwagon");
+		MyString str = new MyString("Chuckwagon");
 		for (int i = 0; i < str.getLength(); i++) {
 			System.out.print(str.get(i) + " ");
 		}

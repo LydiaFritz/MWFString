@@ -3,11 +3,14 @@
  */
 package string_files;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * @author a4432_asu
  *
  */
-public class MyString {
+public class MyString implements Comparable<MyString>{
 	private char [] arr;
 	private int curr_len;
 	
@@ -55,13 +58,24 @@ public class MyString {
 			}
 			//update arr
 			arr = newArr;
-			System.out.println(arr.length);
+			
 		}
 	}
 	
+	@Override
+	public String toString() {
+		String result = "";
+		for(int i = 0; i < curr_len; i++) {
+			result += this.arr[i];
+		}
+		return result;
+	}
+
 	public char get(int index) {
 		return arr[index];		
 	}
+	
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -81,6 +95,10 @@ public class MyString {
 		return true;
 	}
 	
+
+
+
+
 	public MyString toUpper() {
 		return new MyString(this.toString().toUpperCase());		
 	}
@@ -114,10 +132,27 @@ public class MyString {
 	
 	//implement today
 	public MyString substring(int n) {
-		return null;
+		MyString result = new MyString();
+		for(int i = n; i < curr_len; i++)
+			result.addChar(arr[i]);
+		return result;
 	}
 	
 	public MyString substring(int n, int p) {
 		return this;
+	}
+
+	@Override
+	public int compareTo(MyString o) {
+		// TODO Auto-generated method stub
+		int len = curr_len < o.curr_len ? curr_len : o.curr_len;
+		for(int i = 0; i < len; i++) {
+			if(arr[i] < o.arr[i])return -1;
+			else if(arr[i] > o.arr[i])return 1;
+		}
+		if(curr_len == o.curr_len)return 0;
+		
+		if(curr_len > o.curr_len)return 1;
+		else return -1;
 	}
 }
