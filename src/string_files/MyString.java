@@ -58,4 +58,22 @@ public class MyString {
 			System.out.println(arr.length);
 		}
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof MyString))
+			return false;
+		MyString other = (MyString) obj;
+		//check the length
+		if(other.getLength()!=this.getLength())
+			return false;
+		//compare the two strings
+		for(int i = 0; i < other.getLength(); i++) {
+			if(other.get(i)!=this.get(i))
+				return false;
+		}
+		return true;
+	}
 }
