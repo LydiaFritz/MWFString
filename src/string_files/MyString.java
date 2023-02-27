@@ -111,4 +111,13 @@ public class MyString {
 //	public int compareTo(Object o) {		
 //		return 0;
 //	}
+	
+	//implement today
+	public MyString substring(int n) {
+		return null;
+	}
+	
+	public MyString substring(int n, int p) {
+		return null;
+	}
 }
