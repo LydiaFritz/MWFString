@@ -118,6 +118,6 @@ public class MyString {
 	}
 	
 	public MyString substring(int n, int p) {
-		return null;
+		return this;
 	}
 }
