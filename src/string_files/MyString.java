@@ -80,4 +80,35 @@ public class MyString {
 		}
 		return true;
 	}
+	
+	public MyString toUpper() {
+		return new MyString(this.toString().toUpperCase());		
+	}
+	
+	public MyString toLower() {
+		return new MyString(this.toString().toLowerCase());
+	}
+	
+	public MyString concat(MyString rhs) {
+		MyString result = new MyString(this);
+		for(int i = 0; i < rhs.getLength(); i++)
+			result.addChar(rhs.get(i));
+		return result;
+	}
+	
+	private void addChar(char ch) {
+		ensureCapacity();
+		this.arr[curr_len++] = ch;
+	}
+	
+	//implement today
+	public int indexOf(MyString s) {
+		return -1;
+	}
+	
+	//implement today
+//	@Override
+//	public int compareTo(Object o) {		
+//		return 0;
+//	}
 }
